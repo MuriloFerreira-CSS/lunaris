@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunaris</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌙 Lunaris</h1>
+    <nav>
+      <button onclick="showPage('calendario')">Calendário</button>
+      <button onclick="showPage('biblioteca')">Biblioteca</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="calendario" class="page active">
+      <h2>Calendário</h2>
+      <div id="calendar"></div>
+      <div id="eventModal" class="modal hidden">
+        <div class="modal-content">
+          <h3>Adicionar Evento</h3>
+          <input type="text" id="eventTitle" placeholder="Título do evento">
+          <textarea id="eventDesc" placeholder="Descrição"></textarea>
+          <select id="eventCategory">
+            <option value="Pessoal">Pessoal</option>
+            <option value="Trabalho">Trabalho</option>
+            <option value="Estudos">Estudos</option>
+          </select>
+          <input type="file" id="eventAttachment">
+          <button onclick="saveEvent()">Salvar</button>
+          <button onclick="closeModal()">Cancelar</button>
+        </div>
+      </div>
+    </section>
+    <section id="biblioteca" class="page">
+      <h2>Biblioteca</h2>
+      <div id="library">
+        <input type="text" id="searchInput" placeholder="Buscar item...">
+        <button onclick="searchLibrary()">Buscar</button>
+        <button onclick="addManualItem()">Adicionar Manual</button>
+        <div id="libraryResults"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito com 🌙 por Murilo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
